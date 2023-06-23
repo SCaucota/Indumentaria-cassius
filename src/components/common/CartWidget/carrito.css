@@ -1,0 +1,15 @@
+.numeroCarrito{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    background-color: grey;
+    color: white;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    justify-content: center;
+    z-index: 1;
+
+}
