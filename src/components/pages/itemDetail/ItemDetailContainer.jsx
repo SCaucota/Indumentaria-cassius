@@ -1,22 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ItemDetail from './itemDetail';
-import { products } from '../../../productsMock';
 import { useParams } from "react-router-dom"
-
+import { CartContext } from '../../../context/CartContext';
+import Swal from 'sweetalert2';
+import "./itemDetailStyle.css";
+import { db } from "../../../fireBaseConfig";
+import { getDoc, collection, doc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState(null);
 
-    let {id} = useParams()
+    let { id } = useParams()
+
+    const { addToCart, getQuantityById } = useContext(CartContext)
+
+    let quantityProduct = getQuantityById(id)
 
     useEffect(() => {
-        let promesa = new Promise ((resolve, reject) => {
-            let productoSeleccionado = products.find((product)=> product.id === +id)
-            resolve(productoSeleccionado)
-        })
 
-        promesa.then((res) => setProduct(res)).catch(err => console.log(err))
+        let refCollection = collection(db, "products")
+        let refDoc = doc(refCollection, id)
+        getDoc(refDoc).then ( res => setProduct({...res.data(), id: res.id}))
 
     }, [id])
 
@@ -25,11 +30,34 @@ const ItemDetailContainer = () => {
             ...product,
             quantity: cantidad,
         };
-        console.log(data)
+
+        addToCart(data);
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            iconColor: 'white',
+            background: "black",
+            color: "white",
+            customClass: {
+                icon: "icon-color"
+            },
+            showConfirmButton: false,
+            timer: 2200,
+            timerProgressBar: true,
+            showCloseButton: true
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Producto Agregado'
+        })
     }
 
     return (
-        <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito}/>
+        <>
+            <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} quantity={quantityProduct} />
+        </>
     )
 }
 

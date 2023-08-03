@@ -1,6 +1,5 @@
 import * as React from 'react';
 import NavBar from "./NavBar";
-import { Outlet } from 'react-router-dom';
 
 const NavBarContainer = () => {
 
@@ -25,7 +24,6 @@ const NavBarContainer = () => {
                 handleOpenNavMenu={handleOpenNavMenu}
                 handleCloseNavMenu={handleCloseNavMenu}
             />
-            <Outlet/>
         </>
     );
 }
