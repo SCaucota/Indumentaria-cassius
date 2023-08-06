@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductCards from '../../common/productCard/ProductCards';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 
 const ItemList = ({ items }) => {
     return (
-        <div style={{width: "100%", display: "flex", justifyContent: "space-evenly", flexWrap: "wrap", paddingTop: "35px"}}>
+        <div style={{width: "100%", display: "flex", justifyContent: "space-evenly", flexWrap: "wrap", paddingTop: "35px", marginBottom: "10.3rem"}}>
             {
                 items.length > 0 
-                ? items.map((item) => <ProductCards  key={item.id} item={item}/>)
+                ? items.map((item) => <ProductCards  key={item.id} item={item} showCardActions={true}/>)
                 : Array.from({length: 5}, (element, index) => (
                     <Stack spacing={1} key={index} sx={{display: "flex", alignItems: "center", marginTop: "20px"}}>
                         <Skeleton animation='wave' variant="rectangular" width={345} height={320} sx={{bgcolor: 'grey.300'}}/>

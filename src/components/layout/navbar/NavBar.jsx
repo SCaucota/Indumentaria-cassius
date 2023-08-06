@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom"
 
-const NavBar = ({ pages, anchorElNav, handleOpenNavMenu, handleCloseNavMenu }) => {
+const NavBar = ({ categories, anchorElNav, handleOpenNavMenu, handleCloseNavMenu }) => {
     return (
         <AppBar position="static" style={{ backgroundColor: "black"}}>
             <Container maxWidth="xl">
@@ -73,10 +73,10 @@ const NavBar = ({ pages, anchorElNav, handleOpenNavMenu, handleCloseNavMenu }) =
                                 </Link>
                             </MenuItem>
 
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Link key={page} to={`/category/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                                        <Typography textAlign="center">{page}</Typography>
+                            {categories.map((category) => (
+                                <MenuItem key={category.subCategory} onClick={handleCloseNavMenu}>
+                                    <Link key={category} to={`/category/${category.subCategory.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        <Typography textAlign="center">{category.subCategory}</Typography>
                                     </Link>
                                 </MenuItem>
                             ))}
@@ -122,13 +122,13 @@ const NavBar = ({ pages, anchorElNav, handleOpenNavMenu, handleCloseNavMenu }) =
                             </Button>
                         </Link>
                         
-                        {pages.map((page) => (
-                            <Link key={page} to={`/category/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        {categories.map((category) => (
+                            <Link key={category.subCategory} to={`/category/${category.subCategory.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Button
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'white', display: 'block' }}
                                 >
-                                    {page}
+                                    {category.subCategory}
                                 </Button>
                             </Link>
                         ))}

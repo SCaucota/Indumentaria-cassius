@@ -10,6 +10,7 @@ import { getDoc, collection, doc } from "firebase/firestore"
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState(null);
+    const [notFound, setNotFound] = useState(false);
 
     let { id } = useParams()
 
@@ -21,7 +22,14 @@ const ItemDetailContainer = () => {
 
         let refCollection = collection(db, "products")
         let refDoc = doc(refCollection, id)
-        getDoc(refDoc).then ( res => setProduct({...res.data(), id: res.id}))
+        getDoc(refDoc).then ( res => {
+            if(res.exists()){
+                setProduct({...res.data(), id: res.id});
+                notFound;
+            }else{
+                setNotFound(true)
+            }
+        });
 
     }, [id])
 
@@ -56,7 +64,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} quantity={quantityProduct} />
+            <ItemDetail notFound={notFound} product={product} agregarAlCarrito={agregarAlCarrito} quantity={quantityProduct}/>
         </>
     )
 }

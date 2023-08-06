@@ -13,3 +13,10 @@
 .swal2-success-line-tip{
     background-color: rgb(8, 179, 8)  !important;
 }
+
+.divContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 73.9vh;
+}

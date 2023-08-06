@@ -1,0 +1,36 @@
+.checkoutContainer{
+    padding: 40px;
+    min-height: 73.9vh;
+}
+
+.productContainer{
+    border: 2px solid black;
+    padding: 25px 0px 25px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.totalCheckout{
+    display: flex;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 15%;
+    margin-top: 15px;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.colorButton{
+    background-color: black !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+}
