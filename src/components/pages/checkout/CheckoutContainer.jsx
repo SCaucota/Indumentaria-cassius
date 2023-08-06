@@ -2,7 +2,7 @@ import React from 'react';
 import Checkout from './Checkout';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from '../../../context/CartContext';
 import { db } from "../../../fireBaseConfig";
 import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 import { useContext, useState } from 'react';
@@ -66,13 +66,10 @@ const CheckoutContainer = () => {
                     text: `Su número de compra es: ${res.id}`
                 })
             });
-
-            
-
         },
         validationSchema: Yup.object({
-            name: Yup.string().required("Campo Obligatorio").min(5, "Demasiado corto").max(10, "Demasiado largo"),
-            lastName: Yup.string().required("Campo Obligatorio").min(5, "Demasiado corto").max(10, "Demasiado largo"),
+            name: Yup.string().required("Campo Obligatorio").min(5, "Demasiado corto").max(8, "Demasiado largo"),
+            lastName: Yup.string().required("Campo Obligatorio").min(5, "Demasiado corto").max(8, "Demasiado largo"),
             phoneNumber: Yup.number().required("Campo Obligatorio").min(1000000000, "Demasiado corto").max(9999999999, "Demasiado largo"),
             email: Yup.string().email().required("Campo Obligatorio"),
             verifirerEmail: Yup.string().oneOf([Yup.ref("email"), null], "El email no coincide").required("Campo Obligatorio"),

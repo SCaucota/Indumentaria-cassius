@@ -4,24 +4,20 @@
 1. [Información General](#informacion-general)
 2. [Caracteristicas](#características)
 2. [Tecnologías](#tecnologías)
-3. [Desarrolladores](#desarrolladores)
-4. [Información Personal](#información-personal)
+3. [Dependencias](#dependencias)
 
 ## Informacion General
-*****************
 * Este sitio web se encuentra en desarrollo y fue iniciado por fines educativos.
 Este proyecto es basado en una tienda de indumentaria online, cuyo objetivo principal es permitir a los usuarios navegar a tráves de la variedad de productos ofrecidos y la compra de los mismos de forma sencilla y segura, registrando los datos en una base de datos de Firebase.
 
 * En el futuro se procurara hacer mejoras, tales como la autenticación del usuario, registro e inicio de sesión; la posibilidad de que los usuario puedan visualizar compras anteriormente realizadas. Además de mayor especificidad en características con respecto al producto que sera agregado al carrito.
 
 ## Características
-*****************
 - Catálogo de productos: Los usuarios pueden explorar diferentes categorías de productos, como remeras y pantalones, y ver detalles de cada artículo.
 - Carrito de compras: Los usuarios pueden agregar productos al carrito de compras, editar la cantidad de artículos, eliminar productos del carrito y cancelar la.
 - Checkout: Los usuarios pueden proceder al checkout para finalizar su compra.
 
 ## Tecnologías
-*****************
 Lista de tecnologías utilizadas en este proyecto:
 * [Vite](https://vitejs.dev/guide/): Version 4.3.9
 * [Material Ui](https://mui.com/material-ui/getting-started/installation/): Versión 5.14.3
@@ -34,11 +30,6 @@ Lista de tecnologías utilizadas en este proyecto:
 * [Sweetalert2](https://sweetalert2.github.io/#download): Version 11.7.20
 
 ## Dependencias
-*****************
-* Ademas de las dependencias básicas:
-```
-npm init
-```
 * **React Router DOM**
 ```
 npm i react-router-dom
