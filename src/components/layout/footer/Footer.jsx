@@ -15,15 +15,9 @@ const Footer = () => {
                         <hr />
                     </div>
                     <div className='redes'>
-                        <a href="https://www.instagram.com/">
-                            <img src="https://res.cloudinary.com/dcwuqrvuv/image/upload/v1691154680/instagram_dnfofq.png" alt="instagram" />
-                        </a>
-                        <a href="https://www.facebook.com/">
-                            <img src="https://res.cloudinary.com/dcwuqrvuv/image/upload/v1691154680/facebook_qx8wwk.png" alt="facebook" />
-                        </a>
-                        <a href="https://www.tiktok.com/es/">
-                            <img src="https://res.cloudinary.com/dcwuqrvuv/image/upload/v1691154680/tik-tok_fngeh7.png" alt="tiktok" />
-                        </a>
+                        <img src="https://res.cloudinary.com/dcwuqrvuv/image/upload/v1691154680/instagram_dnfofq.png" alt="instagram" />
+                        <img src="https://res.cloudinary.com/dcwuqrvuv/image/upload/v1691154680/facebook_qx8wwk.png" alt="facebook" />
+                        <img src="https://res.cloudinary.com/dcwuqrvuv/image/upload/v1691154680/tik-tok_fngeh7.png" alt="tiktok" />
                     </div>
                 </div>
             </div>
