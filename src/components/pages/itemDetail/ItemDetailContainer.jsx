@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import ItemDetail from './itemDetail';
+import ItemDetail from './ItemDetail';
 import { useParams } from "react-router-dom"
 import { CartContext } from '../../../context/CartContext';
 import Swal from 'sweetalert2';
